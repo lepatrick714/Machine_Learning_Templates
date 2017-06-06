@@ -1,8 +1,10 @@
-#Multi-Layer-Networks
+Machine Learning Templates
+------------
 
 Introduction
 ------------
-This repo is to hold all of my machine learning and data mining templates for educational and practical uses. Any collaboration is welcome! :)
+This repo is to hold all of my machine learning and data mining templates for educational and practical uses. Any collaboration is welcome! :). All programs shall be written 
+in python3 using multiple machine learning libraries such as numpy, panda, tensorflow, etc. Please email me at leduylamc@gmail.com for any bugs.
 
 
 To - Do - List
