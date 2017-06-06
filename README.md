@@ -7,7 +7,7 @@ This repo is to hold all of my machine learning and data mining templates for ed
 
 To - Do - List
 ------------
-- [ ] Linear Regression - IN PROGRESS
+- [x] Linear Regression - NEEDS COMMENTS 
 - [ ] Non - Linear Regression - IN PROGRESS
 - [ ] Logistics Regression
 - [ ] N - Folds Cross Validation 
