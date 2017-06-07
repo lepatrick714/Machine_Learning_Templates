@@ -9,9 +9,10 @@ in python3 using multiple machine learning libraries such as numpy, panda, tenso
 
 To - Do - List
 ------------
-- [x] Linear Regression  
-- [ ] Non - Linear Regression - IN PROGRESS
-- [ ] Logistics Regression
+- [ ] Regression 
+ 	- [x] Linear  
+	- [ ] Non Linear - IN PROGRESS
+	- [ ] Logistics - IN PROGRESS
 - [ ] N - Folds Cross Validation 
 - [ ] Support Vector Machines (SVMs)
 - [ ] Perceptron Learning Algorithm 
@@ -33,7 +34,6 @@ To - Do - List
 - [ ] Non Linear Functions 
 	- [ ] Sigmoid 
 	- [ ] Entropy
-
 
 Authors
 ------------

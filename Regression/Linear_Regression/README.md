@@ -5,20 +5,20 @@ Available Functions
 ------------
 __Regression(X, Y, lambda\_value)__ 
     
-    - __X__ is the feature set 
-    - __Y__ is the classification
-    - __Lambda\_value__ is the regularizer 
-    - Returns a vector __w__ that contains all the trained weights for each feature 
-    - Returns a offset __b__ 
+    - X is the feature set 
+    - Y is the classification
+    - Lambda\_value is the regularizer 
+    - Returns a vector w that contains all the trained weights for each feature 
+    - Returns a offset b 
 
 __Loss\_Function(X, Y, w, b)__
     
-    - __X__ is the feature set 
-    - __Y__ is the classification
-    - __w__ is a vector of weights 
-    - __b__ is the offset 
+    - X is the feature set 
+    - Y is the classification
+    - w is a vector of weights 
+    - b is the offset 
     - Fitness is based on the lowest square error
-    - Returns a __L__ which is the square error of the function 
+    - Returns a L which is the square error of the function 
 
 Sample Call: argv[1] = Data Set , argv[2] = Lambda Value
 
@@ -28,7 +28,7 @@ python3 Linear_Regression.py Data_Set/housing.data 0.001
 
 Sample Ouput: 
 
-'''bash
+```bash
 
 ----- w -----
 [[ -1.08005626e-01]
@@ -49,7 +49,7 @@ Sample Ouput:
 ----- l -----
 21.8948315867
 
-'''
+```
 
 Credit 
 ------------
