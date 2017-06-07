@@ -9,7 +9,7 @@ in python3 using multiple machine learning libraries such as numpy, panda, tenso
 
 To - Do - List
 ------------
-- [x] Linear Regression - NEEDS COMMENTS 
+- [x] Linear Regression  
 - [ ] Non - Linear Regression - IN PROGRESS
 - [ ] Logistics Regression
 - [ ] N - Folds Cross Validation 
@@ -44,4 +44,4 @@ Credits
 -----------
 Data Sets: 
     
-*UCI Housing Data: https://archive.ics.uci.edu/ml/datasets/housing
+Markup : *UCI Housing Data: https://archive.ics.uci.edu/ml/datasets/housing
