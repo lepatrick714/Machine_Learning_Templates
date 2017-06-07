@@ -22,7 +22,8 @@ To - Do - List
 	- [ ] Delta rule
 	- [ ] Gauss–Newton algorithm
 - [ ] Neural Network
-	- [ ] Fully Recurrent Network
+	- [x] Simple Forward & Backward Propagation - IN PROGRESS
+    - [ ] Fully Recurrent Network
 	- [ ] Long Short-term Memory Network
 	- [ ] Convolutional Neural Network
 	- [ ] Multi - Layer Neural Networks
