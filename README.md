@@ -29,6 +29,8 @@ To - Do - List
 	- [ ] Multi - Layer Neural Networks
 - [ ] Decision Trees 
 - [ ] Random Forest 
+- [ ] Optimization 
+    - [ ] Broyden - Fletcher - Goldfarb - Shanno Algorithm (BFGS) 
 - [ ] Non Linear Functions 
 	- [ ] Sigmoid 
 	- [ ] Entropy
