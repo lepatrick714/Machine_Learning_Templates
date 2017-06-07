@@ -5,8 +5,6 @@ import numpy as np
 from numpy.linalg import inv
 
 def Regression(X, Y, lambda_value) :
-    print(X)
-
     I = np.identity(len(X[0]))
     #print(len(I))
     I[0][0] = 0
@@ -47,9 +45,8 @@ def Quadratic_Function(X) :
     X = np.append(col_Ones, X, 1)
     X.shape
 
-
-    for i in range(0, len(X[0])-1) :
-        for j in range(i, len(X[0])-1) :
+    for i in range(len(X[0])) :
+        for j in range(i, len(X[0])) :
 
             '''print("Right Hand")
             print(len(X[:, i]*X[:, j]))
@@ -62,7 +59,12 @@ def Quadratic_Function(X) :
             print(len(X[:, i]*X[:, j]))
             '''
 
-            X_Quad = np.append(X_Quad, X[:, i]*X[:, j])
+            print("X_Quad {} Result {}".format(X_Quad.shape, (X[:, i]*X[:, j]).shape))
+            X_Quad = np.append( X_Quad, np.multiply(X[:, i], X[:, j]) , 1)
+
+    print(X.shape)
+    print("\n\n\n")
+    print(X_Quad.shape)
     return {'X_Quad' : X_Quad}
 
 
@@ -78,6 +80,8 @@ lambda_value = 1
 start = time.time()
 ''' Start Timer '''
 
+
+#Regression_Result = Regression(X, Y, lambda_value)
 X = Quadratic_Function(X)
 Regression_Result = Regression(X['X_Quad'], Y, lambda_value)
 Loss_Result = Loss_Function(X['X_Quad'], Y, Regression_Result["w"], Regression_Result["b"])

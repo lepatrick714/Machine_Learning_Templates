@@ -3,6 +3,7 @@ import sys
 import numpy as np
 from numpy.linalg import inv
 
+''' Returns the minimum weigth vector and the offset '''
 def Regression(X, Y, lambda_value) :
     ''' Adding the columns of Ones '''
     col_Ones = np.ones((len(X), 1))
@@ -25,7 +26,7 @@ def Regression(X, Y, lambda_value) :
     w = np.delete(w, (0), axis=0)
     return {'w': w, 'b': b}
 
-
+''' Returns the square error of a given data set with a trained w and b '''
 def Loss_Function(X, Y, w, b) :
     L = 0
 
@@ -43,15 +44,18 @@ def Loss_Function(X, Y, w, b) :
     return {'L': L}
 
 ''' Loading the data and slicing it to X and Y componenets '''
-data = np.loadtxt(sys.argv[1])
+data = np.loadtxt(sys.argv[1]) #$Input
 
-X = data[:,:len(data[0])-1]
-Y = data[:, len(data[0])-1:]
-lambda_value = 1
+''' Splitting the data up '''
+X = data[:,:len(data[0])-1] #Data
+Y = data[:, len(data[0])-1:] #Class
+lambda_value = sys.argv[2]
 
-Regression_Result = Regression(X, Y, lambda_value)
+''' Function Calls '''
+Regression_Result = Regression(X, Y, float(sys.argv[2]))
 Loss_Result = Loss_Function(X, Y, Regression_Result["w"], Regression_Result["b"])
 
+''' Outputs '''
 print("----- w -----")
 print(Regression_Result["w"])
 

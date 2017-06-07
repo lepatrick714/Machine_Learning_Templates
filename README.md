@@ -18,7 +18,6 @@ To - Do - List
 - [ ] Gradient Descent  
 	- [ ] Batch 
 	- [ ] Stochastic
-	- [ ] Broyden–Fletcher–Goldfarb–Shanno algorithm
 	- [ ] Delta rule
 	- [ ] Gauss–Newton algorithm
 - [ ] Neural Network
@@ -39,3 +38,10 @@ To - Do - List
 Authors
 ------------
 Patrick Le: https://github.com/lepatrick714
+
+
+Credits 
+-----------
+Data Sets: 
+    
+*UCI Housing Data: https://archive.ics.uci.edu/ml/datasets/housing
