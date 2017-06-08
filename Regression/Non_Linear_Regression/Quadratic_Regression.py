@@ -60,7 +60,7 @@ def Quadratic_Function(X) :
             '''
 
             print("X_Quad {} Result {}".format(X_Quad.shape, (X[:, i]*X[:, j]).shape))
-            X_Quad = np.append( X_Quad, np.multiply(X[:, i], X[:, j]) , 1)
+            X_Quad = np.append( (X_Quad, np.multiply(X[:, i], X[:, j])) , 1)
 
     print(X.shape)
     print("\n\n\n")
@@ -81,16 +81,19 @@ start = time.time()
 ''' Start Timer '''
 
 
-#Regression_Result = Regression(X, Y, lambda_value)
+#print("X Size: {}".format( X.shape ))
+
+
 X = Quadratic_Function(X)
-Regression_Result = Regression(X['X_Quad'], Y, lambda_value)
-Loss_Result = Loss_Function(X['X_Quad'], Y, Regression_Result["w"], Regression_Result["b"])
+#Regression_Result = Regression(X, Y, lambda_value)
+#Regression_Result = Regression(X['X_Quad'], Y, lambda_value)
+#Loss_Result = Loss_Function(X['X_Quad'], Y, Regression_Result["w"], Regression_Result["b"])
 
 ''' End Timer '''
 elapsed = time.time()
 ''' End Timer '''
 
-
+'''
 print("--- Running Quadratic Regression ---")
 print("--- Last updated June 7th, 2017 ---")
 print("--- By Patrick Le @ lepatrick714 ---")
@@ -108,3 +111,4 @@ print(Loss_Result["L"])
 print("Completed in %s seconds") % (elapsed)
 
 print("--- END OF PROGRAM ---")
+'''
