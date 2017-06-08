@@ -10,3 +10,7 @@ To - Do - List
 - [ ] Cost Function 
 - [ ] Cost Function Prime  
 - [ ] Numerical Gradient Checking 
+
+Picture
+------------
+

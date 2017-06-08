@@ -31,6 +31,9 @@ To - Do - List
 - [ ] Random Forest 
 - [ ] Optimization 
     - [ ] Broyden - Fletcher - Goldfarb - Shanno Algorithm (BFGS) 
+    - [ ] Newton - Raphson 
+    - [ ] Line Search / Trust Regions
+    - [ ] Simulated Annealing
 - [ ] Non Linear Functions 
 	- [ ] Sigmoid 
 	- [ ] Entropy
