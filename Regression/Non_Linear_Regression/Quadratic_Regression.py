@@ -5,6 +5,11 @@ import numpy as np
 from numpy.linalg import inv
 
 def Regression(X, Y, lambda_value) :
+
+    ''' Adding the columns of Ones '''
+    col_Ones = np.ones((len(X), 1))
+    X = np.append(col_Ones, X, 1)
+
     I = np.identity(len(X[0]))
     #print(len(I))
     I[0][0] = 0
@@ -35,16 +40,8 @@ def Loss_Function(X, Y, w, b) :
     L = total / len(X)
     return {'L': L}
 
-''' BUILD NOT COMPLETE - NEEDS DEBUGGING '''
 def Quadratic_Function(X) :
     X_Quad = X
-
-    ''' Adding the columns of Ones '''
-    col_Ones = np.ones((len(X), 1))
-    col_Ones.shape
-    X = np.append(col_Ones, X, 1)
-    X.shape
-
     for i in range(len(X[0])) :
         for j in range(i, len(X[0])) :
 
@@ -59,12 +56,14 @@ def Quadratic_Function(X) :
             print(len(X[:, i]*X[:, j]))
             '''
 
-            print("X_Quad {} Result {}".format(X_Quad.shape, (X[:, i]*X[:, j]).shape))
-            X_Quad = np.append( (X_Quad, np.multiply(X[:, i], X[:, j])) , 1)
+            temp = np.multiply(X[:, i],X[:, j])
+            temp = np.reshape( temp,(-1,1) )
+            #print("X_Quad {} Result {}".format(X_Quad.shape, temp.shape))
+            X_Quad = np.append( X_Quad, temp , 1)
 
-    print(X.shape)
-    print("\n\n\n")
-    print(X_Quad.shape)
+    #print(X.shape)
+    #print("\n\n\n")
+    #print(X_Quad.shape)
     return {'X_Quad' : X_Quad}
 
 
@@ -73,42 +72,58 @@ data = np.loadtxt(sys.argv[1])
 
 X = data[:,:len(data[0])-1]
 Y = data[:, len(data[0])-1:]
-lambda_value = 1
+
+''' Splitting the data up '''
+X = data[:,:len(data[0])-1] #Data
+Y = data[:, len(data[0])-1:] #Class
+
+X_train = X[0: int(.80*len(X)), :]
+Y_train = Y[0: int(.80*len(Y)), :]
+
+X_test = X[int(.80*len(X))+1 : len(X)+1,:]
+Y_test = Y[int(.80*len(Y))+1 : len(Y)+1,:]
 
 
 ''' Start Timer '''
 start = time.time()
 ''' Start Timer '''
 
-
-#print("X Size: {}".format( X.shape ))
-
-
-X = Quadratic_Function(X)
-#Regression_Result = Regression(X, Y, lambda_value)
-#Regression_Result = Regression(X['X_Quad'], Y, lambda_value)
-#Loss_Result = Loss_Function(X['X_Quad'], Y, Regression_Result["w"], Regression_Result["b"])
+X_train = Quadratic_Function(X_train)
+X_test = Quadratic_Function(X_test)
+Regression_Result = Regression(X_train['X_Quad'], Y_train, float(sys.argv[2]))
+Loss_Result = Loss_Function(X_test['X_Quad'], Y_test, Regression_Result["w"], Regression_Result["b"])
 
 ''' End Timer '''
 elapsed = time.time()
 ''' End Timer '''
 
-'''
-print("--- Running Quadratic Regression ---")
-print("--- Last updated June 7th, 2017 ---")
+
+''' Outputs '''
+print("--- Running Linear Regression ---")
+print("--- Last updated June 8th, 2017 ---")
 print("--- By Patrick Le @ lepatrick714 ---")
 
-print("----- w -----")
+print("\n\n")
+
+print("---- WEIGHTS ----")
 print(Regression_Result["w"])
 
-print("----- b -----")
+print("\n\n")
+
+print("---- OFFSET ----")
 print(Regression_Result["b"])
 
-print("----- l -----")
-print(Loss_Result["L"])
+print("\n\n")
 
-#Insert Timer output
-print("Completed in %s seconds") % (elapsed)
+print("---- ACCURACY ---")
+print("{} % Correct".format( 1*(100 - Loss_Result["L"]) ))
+
+print("\n\n")
+
+print("---- INACCURACY ----")
+print("{} % Incorrect".format(Loss_Result["L"]))
+print("\n\n")
+
 
 print("--- END OF PROGRAM ---")
-'''
+
